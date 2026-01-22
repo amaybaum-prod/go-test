@@ -1,1 +1,1 @@
-package go-flags
+package goflags

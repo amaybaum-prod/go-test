@@ -1,1 +1,1 @@
-package go-spew
+package gospew

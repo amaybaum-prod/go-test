@@ -1,1 +1,1 @@
-package docker-credential-helpers
+package dockercredentialhelpers

@@ -1,1 +1,1 @@
-package tar-split
+package tarsplit

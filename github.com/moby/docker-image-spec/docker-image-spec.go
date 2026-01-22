@@ -1,1 +1,1 @@
-package docker-image-spec
+package dockerimagespec

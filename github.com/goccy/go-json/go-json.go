@@ -1,1 +1,1 @@
-package go-json
+package gojson

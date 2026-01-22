@@ -1,1 +1,1 @@
-package go-difflib
+package godifflib

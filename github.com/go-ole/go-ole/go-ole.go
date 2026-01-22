@@ -1,1 +1,1 @@
-package go-ole
+package goole

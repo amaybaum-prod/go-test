@@ -1,1 +1,1 @@
-package go-containerregistry
+package gocontainerregistry

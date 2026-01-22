@@ -1,1 +1,1 @@
-package go-version
+package goversion

@@ -1,1 +1,1 @@
-package image-spec
+package imagespec

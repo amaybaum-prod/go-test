@@ -1,1 +1,1 @@
-package go-digest
+package godigest

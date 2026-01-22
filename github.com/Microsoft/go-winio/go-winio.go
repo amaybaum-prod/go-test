@@ -1,1 +1,1 @@
-package go-winio
+package gowinio

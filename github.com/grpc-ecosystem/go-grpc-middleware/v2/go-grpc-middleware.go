@@ -1,1 +1,1 @@
-package go-grpc-middleware
+package gogrpcmiddleware

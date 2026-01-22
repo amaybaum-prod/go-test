@@ -1,1 +1,1 @@
-package go-toml
+package gotoml

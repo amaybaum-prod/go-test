@@ -1,1 +1,1 @@
-package go-sysconf
+package gosysconf

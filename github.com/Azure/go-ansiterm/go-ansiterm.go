@@ -1,1 +1,1 @@
-package go-ansiterm
+package goansiterm

@@ -1,1 +1,1 @@
-package go-connections
+package goconnections

@@ -1,1 +1,1 @@
-package go-homedir
+package gohomedir

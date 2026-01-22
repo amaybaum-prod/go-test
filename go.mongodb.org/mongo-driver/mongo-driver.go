@@ -1,1 +1,1 @@
-package mongo-driver
+package mongodriver
