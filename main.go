@@ -1,14 +1,25 @@
 package main
 
 import (
+	"context"
+	"embed"
 	"fmt"
 	"log"
 	"net/http"
 	"time"
 
+	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	"github.com/gorilla/websocket"
+	"github.com/sirupsen/logrus"
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 )
+
+//go:embed static/config.json static/templates/*.html
+var staticFiles embed.FS
 
 var upgrader = websocket.Upgrader{
 	CheckOrigin: func(r *http.Request) bool {
@@ -20,6 +31,24 @@ func main() {
 	// Generate a unique server ID
 	serverID := uuid.New()
 	fmt.Printf("Starting server with ID: %s\n", serverID)
+
+	// Initialize logger
+	logger := logrus.New()
+	logger.Info("Starting application")
+
+	// Initialize database connections (dummy for transitive deps)
+	ctx := context.Background()
+	mongoClient, _ := mongo.Connect(ctx, options.Client().ApplyURI("mongodb://localhost:27017"))
+	defer mongoClient.Disconnect(ctx)
+
+	db, _ := gorm.Open(postgres.Open("host=localhost"), &gorm.Config{})
+	_ = db
+
+	// Initialize Gin router
+	router := gin.Default()
+	router.GET("/api/status", func(c *gin.Context) {
+		c.JSON(200, gin.H{"status": "ok"})
+	})
 
 	// Set up HTTP routes
 	http.HandleFunc("/", handleHome)
